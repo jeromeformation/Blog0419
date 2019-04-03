@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %}
 
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/css/homepage.css">
+{% endblock %}
+
+{% block title %}Liste des derniers articles{% endblock %}
+
 {% block body %}
-    <h1>Bonjour</h1>
+    <h1>Liste des derniers articles</h1>
 {% endblock %}
