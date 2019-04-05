@@ -9,4 +9,10 @@
 
 {% block body %}
     <h1>Liste des derniers articles</h1>
+
+    <ul>
+    {% for article in articles %}
+        <li>{{ article.title }}</li>
+    {% endfor %}
+    </ul>
 {% endblock %}
