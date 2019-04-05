@@ -89,6 +89,10 @@ class Article
     {
         $this->tags = new ArrayCollection();
         $this->comments = new ArrayCollection();
+
+        $this->createdAt = new \DateTime();
+        $this->nbViews = 0;
+        $this->likes = 0;
     }
 
     public function getId(): ?int

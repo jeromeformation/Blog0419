@@ -44,6 +44,10 @@ class FrontArticleController extends AbstractController
             'slug' => $slug
         ]);
 
+        if (is_null($article)) {
+            throw $this->createNotFoundException('Article non trouvé');
+        }
+
         return $this->render('article/show.html.twig', [
             'article' => $article
         ]);

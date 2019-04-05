@@ -12,7 +12,10 @@
 
     <ul>
     {% for article in articles %}
-        <li>{{ article.title }}</li>
+        <li>
+            {{ article.title }}
+            <a href="{{ path('app_frontarticle_show', {slug: article.slug }) }}" class="btn btn-outline-primary">Détail</a>
+        </li>
     {% endfor %}
     </ul>
 {% endblock %}

@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
     <h1>{{ article.title }}</h1>
+    <div class="badge badge-info">{{ article.category.name }}</div>
     <p>{{ article.content }}</p>
+
 {% endblock %}
