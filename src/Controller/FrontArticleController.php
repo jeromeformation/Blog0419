@@ -30,10 +30,22 @@ class FrontArticleController extends AbstractController
 
     /**
      * @Route("/article/{slug}")
+     * @param string $slug
      * @return Response
      */
-    public function show(): Response
+    public function show(string $slug): Response
     {
-        return $this->render('article/show.html.twig');
+        // Récupération du Repository
+        $repository = $this->getDoctrine()
+            ->getRepository(Article::class);
+
+        // Récupération de tous les articles
+        $article = $repository->findOneBy([
+            'slug' => $slug
+        ]);
+
+        return $this->render('article/show.html.twig', [
+            'article' => $article
+        ]);
     }
 }
